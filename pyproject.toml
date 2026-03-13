@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools >= 75.1.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "MAI-VAS"
+version = "1.0.0"
+description = "MAI-VAS density model"
+readme = "README.md"
+requires-python  = ">=3.9"
+authors = [{name = "Stepan Romanov", email = "stepan.romanov@manchester.ac.uk"}]
+dependencies = [
+    "torch==2.5.0",
+    "torchvision==0.20.0",
+    "torchaudio==2.5.0",
+    "pandas==2.3.1",
+    "matplotlib==3.9.1",
+    "tqdm==4.67.1",
+    "pydicom==2.4.4",
+    "scikit-image==0.24.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mai-vas"]
+exclude = ["data", "model", "results", "data_scripts"]
+
+
+
