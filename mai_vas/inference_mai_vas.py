@@ -109,7 +109,7 @@ def main():
     loader = _construct_loader(args)
     
     # Fetch the model
-    model = MAI_VAS_Model(pretrain = True).to(device).double() 
+    model = MAI_VAS_Model(pretrain = True).to(device)
     model.load_state_dict(torch.load(f'{args.model_path}/{args.view}_{args.format}_model.pth', map_location=device, weights_only = True))
     logger.info(f'Loaded the {args.model_path}/{args.view}_{args.format}_model.pth model.')
     

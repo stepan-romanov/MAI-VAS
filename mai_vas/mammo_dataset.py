@@ -131,20 +131,21 @@ class MammoDataset(Dataset):
             raise ValueError(f'The attributed must be either L or R, not {side}.')
         if side == 'R':
             image = np.fliplr(image)
-            
+
         # Find otsu cutoff threshold
         cut_off = filters.threshold_otsu(image)
         
         # For RAW, apply otsu's, log and invert
         if self.image_format == 'RAW':
             np.clip(image, 0, cut_off, out = image)
-            image = np.log(image)
+            image = np.log(image) # Returns float32.
             np.subtract(np.amax(image), image, out = image) # Flips in place
             
         # For PRO, apply otsu's
         elif self.image_format == 'PRO':
             np.clip(image, cut_off, np.amax(image), out = image)
-            image = (image - np.amin(image)) / (np.amax(image)- np.amin(image))
+            image = image.astype(np.float32) 
+            image = (image - np.amin(image)) / (np.amax(image)- np.amin(image)) # By default, the normalisation returns float64.
  
         # Resolves issue of invalid pixels for RAW. 
         if np.amax(image) == np.inf:
@@ -200,5 +201,3 @@ if __name__ == "__main__":
     dataset = MammoDataset(data_path = 'Z:/Code/Projects/MAI-VAS/data', 
                           view_form = 'MLO', image_format = 'RAW', labels = True)
     output = dataset[0]
-
-              
