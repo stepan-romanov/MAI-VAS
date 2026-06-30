@@ -18,20 +18,19 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: MAI-VAS AI density model
-email: stepan.romanov23@gmail.com
+title: MAI-VAS
+email: stepan.romanov@manchester.ac.uk
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-repository: stepan-romanov/MAI-VAS
-baseurl: "/MAI-VAS" # the subpath of your site, e.g. /blog
-url: "https://yourusername.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+  MAI-VAS is an AI-based method for percent breast density assessment from digital mammograms.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
+license: GPL-3.0
+markdown: kramdown
 
 # Build settings
-theme: jekyll-theme-leap-day
+theme: jekyll-theme-slate
 plugins:
   - jekyll-feed
 

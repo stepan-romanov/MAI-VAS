@@ -118,20 +118,20 @@ class MammoDataset(Dataset):
     def preprocess_image(self, image_path, side):
         """Load and preprocess the given image. Does not include pixel spacing modifiers."""
 
-        # Read the dicom and fetch the pixel array
-        if image_path.suffix != '.dcm' and image_path.suffix != '.npy':
-            raise ValueError(f'Image path needs to be a .dcm or .npy file, not {image_path}.')
-        if image_path.suffix == '.dcm':
-            image = pydicom.read_file(image_path).pixel_array
-        else:
-            image = np.load(image_path.with_suffix('.npy'))
-
+        # # Read the dicom and fetch the pixel array
+        # if image_path.suffix != '.dcm' and image_path.suffix != '.npy':
+        #     raise ValueError(f'Image path needs to be a .dcm or .npy file, not {image_path}.')
+        # if image_path.suffix == '.dcm':
+        #     image = pydicom.read_file(image_path).pixel_array
+        # else:
+        #     image = np.load(image_path.with_suffix('.npy'))
+        image = pydicom.read_file(image_path).pixel_array
         # Right side mammograms are flipped
         if side != 'L' and side != 'R':
             raise ValueError(f'The attributed must be either L or R, not {side}.')
         if side == 'R':
             image = np.fliplr(image)
-
+            
         # Find otsu cutoff threshold
         cut_off = filters.threshold_otsu(image)
         
@@ -144,7 +144,7 @@ class MammoDataset(Dataset):
         # For PRO, apply otsu's
         elif self.image_format == 'PRO':
             np.clip(image, cut_off, np.amax(image), out = image)
-            image = image.astype(np.float32) 
+            image = image.astype(np.float32)
             image = (image - np.amin(image)) / (np.amax(image)- np.amin(image)) # By default, the normalisation returns float64.
  
         # Resolves issue of invalid pixels for RAW. 
@@ -201,3 +201,5 @@ if __name__ == "__main__":
     dataset = MammoDataset(data_path = 'Z:/Code/Projects/MAI-VAS/data', 
                           view_form = 'MLO', image_format = 'RAW', labels = True)
     output = dataset[0]
+
+              
