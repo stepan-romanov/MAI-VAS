@@ -11,13 +11,13 @@ MAI-VAS is an AI-based model developed at the University of Manchester that can 
 
 ### 1. Download the executable
 
-Click [here](https://www.dropbox.com/scl/fi/3jlapgjzwu51k7voncqvw/MAI-VAS.exe?rlkey=ztwa3piq1q2f6iji5iti3g5fy&st=ii1he6xt&dl=1) to download the MAI-VAS executable file.
+Click <a href="https://www.dropbox.com/scl/fi/3jlapgjzwu51k7voncqvw/MAI-VAS.exe?rlkey=ztwa3piq1q2f6iji5iti3g5fy&st=ii1he6xt&dl=1" onclick="gtag('event', 'download_click', {'event_category': 'engagement', 'event_label': 'exe_download'});" rel="noopener">here</a> to download the MAI-VAS executable file.
 
 ### 2.  Download the model weights
 
-Download the model weights files <a href="https://www.dropbox.com/scl/fo/swolxuige1unyugtmh4sa/AEA4Y9xRD0k7pv32HuGwNmY?rlkey=0unz1vjzq31erw3l63guomgqg&st=66owq1mb&dl=1" onclick="gtag('event', 'download_click', {'event_category': 'engagement', 'event_label': 'weights download'});" rel="noopener">here</a>. There should be 4 files, one for each view and image format combination. Unzip and place the "model" folder with the weights alongside the executable. 
+Download the model weights files <a href="https://www.dropbox.com/scl/fo/swolxuige1unyugtmh4sa/AEA4Y9xRD0k7pv32HuGwNmY?rlkey=0unz1vjzq31erw3l63guomgqg&st=66owq1mb&dl=1" onclick="gtag('event', 'download_click', {'event_category': 'engagement', 'event_label': 'weights_download'});" rel="noopener">here</a>. There should be 4 files, one for each view and image format combination. Unzip and place the "model" folder with the weights alongside the executable. 
 
-![Model folder location](/assets/images/model_dir_location.png "Model folder location")
+![Model folder location]({{ '/assets/images/model_dir_location.png' | relative_url }})
 
 ### 3. Run
 
@@ -29,7 +29,7 @@ GUI should be ready to go! Note that the first time you launch the app it may ta
 
 By default there are 3 input modes you can select:
 
-![Input mode image](/assets/images/input_mode_guideline.png "Input mode")
+![Input mode image]({{ '/assets/images/input_mode_guideline.png' | relative_url }})
 
 - From folder: MAI-VAS will be run recursievely on all images in a given folder. The programme should auto-detect the view of any image, but you will need to select the image format. The results will be saved in a csv for all of the valid images in the selected folder.
 - Single-image mode: MAI-VAS will be run on a one image. Both the view and the image-format will be autodetected. The predicted VAS score will be printed to console, and the image should be automatically displayed. 
@@ -39,11 +39,11 @@ By default there are 3 input modes you can select:
 
 Select the input file or folder. The nature of the input will depend on the selected mode. Select where you want for the results csv to be saved. By default it should be placed alongside the executable.
 
-![Path guideline image](/assets/images/data_path_guideline.png "Path guideline")
+![Path guideline image]({{ '/assets/images/data_path_guideline.png' | relative_url }})
 
 ### 3. Calculate
 
-![Calculate image](/assets/images/calculate_guideline.png "Calculate")
+![Calculate image]({{ '/assets/images/calculate_guideline.png' | relative_url }})
 
 ### Warnings
 
@@ -58,7 +58,7 @@ Any images that trigger the above warnings will be **skipped**. Additionally, an
 
 You can also feed the images into the GUI using metadata file. This is useful if you have images with a lot of missing information, or complex folder structures as you can edit these features in the metadata file. An example file can be found [here](https://www.dropbox.com/scl/fi/ir8a7mc193cvx8i5bjfk2/sample_meta_data_file.csv?rlkey=xfdh2ezyakxz26ya9qnswd9tk&st=l0lm1q2g&dl=1).
 
-![Metadata example](/assets/images/metadata_file.png "Metadata example")
+![Metadata example]({{ '/assets/images/metadata_file.png' | relative_url }})
 
 - **patient** - anon id for the image.
 - **path** - absolute path to the image.
@@ -72,7 +72,7 @@ You can also feed the images into the GUI using metadata file. This is useful if
 
 Visual Analogue Scales (VAS) are a continuous measure of percent breast density. Examiners place a mark on a scale from 0 to 100 corresponding to the percent of fibroglandular tissue. The forms are then electronically scanned and the value recorded. See an example form below.
 
-![VAS form image](/assets/images/VAS_form.png "VAS form")
+![VAS form image]({{ '/assets/images/VAS_form.png' | relative_url }})
 
 VAS is less coarse than categoric measures of breast density, and has been shown to have a high correlation with breast cancer risk. More details can be found in this publication that compared VAS against some automated methods [Springer](https://link.springer.com/article/10.1186/s13058-018-0932-z).
 

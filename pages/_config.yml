@@ -23,11 +23,12 @@ email: stepan.romanov@manchester.ac.uk
 description: >- # this means to ignore newlines until "baseurl:"
   MAI-VAS is an AI-based method for percent breast density assessment from digital mammograms.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://stepan-romanov.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 license: GPL-3.0
 markdown: kramdown
+repository: stepan-romanov/MAI-VAS
 
 # Build settings
 theme: jekyll-theme-slate
