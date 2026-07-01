@@ -11,7 +11,7 @@ MAI-VAS is an AI-based model developed at the University of Manchester that can 
 
 ### 1. Download the executable
 
-Click <a href="https://www.dropbox.com/scl/fi/3jlapgjzwu51k7voncqvw/MAI-VAS.exe?rlkey=ztwa3piq1q2f6iji5iti3g5fy&st=ii1he6xt&dl=1" onclick="gtag('event', 'download_click', {'event_category': 'engagement', 'event_label': 'exe_download'});" rel="noopener">here</a> to download the MAI-VAS executable file.
+Click <a href="https://www.dropbox.com/scl/fi/w0zmi1zj3edmh3dypbnzz/MAI-VAS.exe?rlkey=sw99h9tx5285rxccbqogee0b2&st=xlbpa1km&dl=1" onclick="gtag('event', 'download_click', {'event_category': 'engagement', 'event_label': 'exe_download'});" rel="noopener">here</a> to download the MAI-VAS executable file.
 
 ### 2.  Download the model weights
 

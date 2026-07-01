@@ -447,8 +447,12 @@ class MaiVasWorker(QObject):
 
             # Save results if completed successfully
             elif self._running and self.model.mode == 0:
-                test_outdata = pd.DataFrame({'Names':np.concatenate([name_list, name_list_alt]), 'Model_out': np.concatenate([output_list, output_list_alt])})
-                test_outdata.to_csv(f'{self.model.save_path}/{Path(self.model.data_path).stem}-{self.model.format}_results.csv', index = False, float_format='%.6f')
+                if self.model.multiple_views:
+                    test_outdata = pd.DataFrame({'Names':np.concatenate([name_list, name_list_alt]), 'Model_out': np.concatenate([output_list, output_list_alt])})
+                    test_outdata.to_csv(f'{self.model.save_path}/{Path(self.model.data_path).stem}-{self.model.format}_results.csv', index = False, float_format='%.6f')
+                else:
+                    test_outdata = pd.DataFrame({'Names':name_list, 'Model_out': output_list})
+                    test_outdata.to_csv(f'{self.model.save_path}/{Path(self.model.data_path).stem}-{self.model.format}_results.csv', index = False, float_format='%.6f')
 
                 # Handle warnings if there are any.
                 if not self.model.data_handler.warning.empty:
